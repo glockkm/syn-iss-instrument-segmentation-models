@@ -88,6 +88,14 @@ Input image: synthetic surgical scene
 Output (binary mask): highlighted instrument pixels
 Output (multiclass mask): shaft (yellow), wrist (red), jaw (green)
 
+Setup:
+For pip:
+pip install -r requirements.txt
+
+For Conda:
+conda env create -f environment.yml
+conda activate syn-iss-seg
+
 Organizers:
 Anand Malpani
 Kimberly Glock
