@@ -57,9 +57,9 @@ Two baseline models were implemented:
 Both models were intentionally kept simple (no custom augmentations or advanced tuning) to serve as a fair and reproducible vanilla baseline for challenge participants.
 
 Files Included:
-micc_279_challenge_binary.ipynb – Binary segmentation model notebook
-for_testing_binary_energ_data_efficient_fpn.ipynb – Inference and evaluation notebook for binary model
-micc_279_challenge_multiclass.ipynb – Multiclass segmentation model notebook
+micc_279_challenge_binary.ipynb – Binary segmentation model notebook that contains training
+testing_for_micc_279_binary_model.ipynb – Binary segmentation model notebook that contains testing/inference 
+micc_279_challenge_multiclass.ipynb – Multiclass segmentation model notebook that contains both training and testing/inference in the same notebook
 NOTE: Full dataset available via Synapse link above
 
 Training Details:
@@ -88,13 +88,59 @@ Input image: synthetic surgical scene
 Output (binary mask): highlighted instrument pixels
 Output (multiclass mask): shaft (yellow), wrist (red), jaw (green)
 
-Setup:
-For pip:
-pip install -r requirements.txt
+Follow the steps below to reproduce the experiments and visualize results:
+* Environment setup
+Install dependencies either via pip or Conda.
 
-For Conda:
+pip install -r requirements.txt
+or
 conda env create -f environment.yml
 conda activate syn-iss-seg
+
+* Dataset preparation
+The synthetic dataset can be downloaded from the Synapse challenge page:
+https://www.synapse.org/Synapse:syn50908388/wiki/620516
+
+Unzip the dataset and set the correct image and mask directory paths inside each notebook before running.
+
+* Binary segmentation baseline
+a. Open micc_279_challenge_binary.ipynb
+
+Trains a binary segmentation model using an EfficientNet-based Feature Pyramid Network (FPN).
+
+Produces a model checkpoint after training.
+
+b. Open testing_for_micc_279_binary_model.ipynb
+
+Loads the trained binary model and runs inference on test images.
+
+Visualizes predicted instrument masks and evaluates Dice/IoU scores.
+
+* Multiclass segmentation baseline
+a. Open micc_279_challenge_multiclass_cleaned.ipynb
+
+Trains a multiclass segmentation model for instrument part segmentation (shaft, wrist, jaw).
+
+Includes built-in inference and visualization after training.
+
+Evaluates class-wise segmentation performance on synthetic test data.
+
+* Viewing results
+The notebooks output visual comparisons showing:
+
+Original simulator image
+
+Ground truth mask
+
+Predicted binary or multiclass segmentation mask
+Quantitative metrics such as IoU and Dice coefficients are printed after inference.
+
+Notes:
+All notebooks are compatible with Google Colab.
+
+GPU runtime is recommended for training.
+
+Model weights and results can be saved to Drive or local storage as configured in the notebooks.
 
 Organizers:
 Anand Malpani
