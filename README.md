@@ -57,7 +57,7 @@ Two baseline models were implemented:
 Both models were intentionally kept simple (no custom augmentations or advanced tuning) to serve as a fair and reproducible vanilla baseline for challenge participants.
 
 Files Included:
-binary_energ_data_efficient_fpn.ipynb – Binary segmentation model notebook
+micc_279_challenge_binary.ipynb – Binary segmentation model notebook
 for_testing_binary_energ_data_efficient_fpn.ipynb – Inference and evaluation notebook for binary model
 micc_279_challenge_multiclass.ipynb – Multiclass segmentation model notebook
 NOTE: Full dataset available via Synapse link above
