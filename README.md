@@ -60,7 +60,7 @@ Files Included:
 binary_energ_data_efficient_fpn.ipynb – Binary segmentation model notebook
 for_testing_binary_energ_data_efficient_fpn.ipynb – Inference and evaluation notebook for binary model
 micc_279_challenge_multiclass.ipynb – Multiclass segmentation model notebook
-synthetic_images.zip – Optional dataset sample (or available via Synapse link above)
+NOTE: Full dataset available via Synapse link above
 
 Training Details:
 * Framework: PyTorch and segmentation_models_pytorch
